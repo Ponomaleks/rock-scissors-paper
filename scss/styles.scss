@@ -21,6 +21,7 @@ body {
   line-height: 1.5em;
   font-size: 20px;
   font-family: sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
 
 section {
@@ -43,6 +44,7 @@ section {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  position: relative;
 }
 
 .gamer {
@@ -50,6 +52,7 @@ section {
 }
 .user-controls,
 .comp-controls {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -78,6 +81,10 @@ section {
 button {
   cursor: pointer;
 }
+.comp-controls .controls {
+  cursor: default;
+}
+
 .animation-container {
   overflow: hidden;
   display: flex;
@@ -105,14 +112,17 @@ button {
   padding: 7px 15px;
   background-color: orange;
   border-radius: 15px;
+  margin-top: 5px;
 }
 
 .message {
   margin-top: 10px;
+  text-align: center;
 }
 .result {
   margin-top: 10px;
   text-align: center;
+  font-weight: bold;
 }
 
 .comp-controls.blink .rock {
@@ -130,5 +140,31 @@ button {
 @keyframes blink {
   100% {
     background-color: green;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  body {
+    margin: 40px 10px;
+  }
+
+  .game-controls {
+    margin-top: 10px;
+  }
+  .controls {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+  }
+  .user-controls,
+  .comp-controls {
+    position: absolute;
+  }
+  .user-controls {
+    left: 5px;
+  }
+
+  .comp-controls {
+    right: 5px;
   }
 }
