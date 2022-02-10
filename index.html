@@ -6,6 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=0"
     />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/png" />
   </head>
   <body>
     <section class="rules">
@@ -36,7 +37,7 @@
         <div class="animation-container">
           <img
             class="animation"
-            src="./images-rsp/start.webp"
+            src="./images/start.webp"
             alt="gaming process demonstration"
           />
         </div>
@@ -53,7 +54,7 @@
             class="controls scissors"
             data-control="scissors"
           >
-            <img src="./images-rsp/scissors.png" alt="scissors" /></button
+            <img src="./images/scissors.png" alt="scissors" /></button
           ><button
             type="button"
             class="controls paper"
@@ -65,8 +66,10 @@
       <p class="message"></p>
       <p class="result"></p>
     </section>
-    <audio controls="controls">
-      <source src="./sound1/game_rules.wav" type="audio/wav" />
-    </audio>
+    <audio
+      class="sound"
+      src="./sound/game_rules.wav"
+      preload="metadata"
+    ></audio>
   </body>
 </html>

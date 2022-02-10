@@ -54,16 +54,16 @@ const choiseComp = e => {
     let scissorsAnimation;
     switch (random) {
         case 0:
-            scissorsAnimation = `./images-rsp/${userChoise}-rock.webp`;
+            scissorsAnimation = `./images/${userChoise}-rock.webp`;
             break;
         case 1:
-            scissorsAnimation = `./images-rsp/${userChoise}-scissors.webp`;
+            scissorsAnimation = `./images/${userChoise}-scissors.webp`;
             break;
         case 2:
-            scissorsAnimation = `./images-rsp/${userChoise}-paper.webp`;
+            scissorsAnimation = `./images/${userChoise}-paper.webp`;
             break;
         default:
-            scissorsAnimation = './images-rsp/start.webp';
+            scissorsAnimation = './images/start.webp';
     }
 
     animate(animation, scissorsAnimation);

@@ -50,6 +50,10 @@ module.exports = {
         test: /\.s(a|c)ss$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
+      {
+        test: /\.(wav|mp3)/,
+        use: ['file-loader'],
+      },
     ],
   },
   plugins: [
@@ -72,8 +76,12 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(PATH_SOURCE, 'images-rsp'),
-          to: path.resolve(PATH_DIST, './images-rsp'),
+          from: path.resolve(PATH_SOURCE, 'images'),
+          to: path.resolve(PATH_DIST, './images'),
+        },
+        {
+          from: path.resolve(PATH_SOURCE, 'sound'),
+          to: path.resolve(PATH_DIST, './sound'),
         },
       ],
     }),

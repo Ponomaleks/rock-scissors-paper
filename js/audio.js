@@ -1,9 +1,10 @@
 const sound = document.querySelector('.sound');
 const play = () => {
-    sound.play;
+    sound.play();
 };
 const stop = () => {
-    sound.stop;
+    sound.pause();
+    sound.load();
 };
 
 export { play, stop };
