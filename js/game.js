@@ -1,4 +1,5 @@
 import animate from './animate';
+import { play, stop } from './audio';
 import roundMessage from './message';
 
 const userControls = document.querySelector('.user-controls');
@@ -20,12 +21,18 @@ let count = '';
 let round = 0;
 let blocked = false;
 let isWon;
+let toPlay = false;
 
-rules.addEventListener('click', () => {
-    card.classList.toggle('flipped');
-});
+rules.addEventListener('click', checkRules);
 userControls.addEventListener('click', choiseUser);
 reset.addEventListener('click', resetGame);
+
+function checkRules() {
+    card.classList.toggle('flipped');
+    toPlay = !toPlay;
+    if (toPlay) play();
+    if (!toPlay) stop();
+}
 
 function choiseUser(e) {
     if (blocked) {
